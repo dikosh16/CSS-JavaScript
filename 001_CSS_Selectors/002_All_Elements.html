@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All, Elements</title>
+    <style>
+    * {
+        color: red;
+        text-decoration: none;
+    }
+    p {
+        color: brown;
+    }
+    .class {
+        color: green;
+    }
+    a {
+        font-weight: bold;
+        font-style: italic;
+        text-decoration: underline;
+    }
+    p, a {
+        text-transform: uppercase;
+    }
+    </style>
+</head>
+<body>
+    <h1 class="class1" id="id1">Title</h1>
+    <p class="class">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+    <a href="#">Link</a>
+    <script>
+        // Перепишемо селектори з першої папки 001_CSS_Selectors
+
+        // Селектор *
+        let allElements = document.querySelectorAll('*');
+
+        // Селектор по тегу <p>
+        let paragraphs = document.getElementsByTagName('p');
+
+        // Селектор по тегу <a>
+        let links = document.getElementsByTagName('a');
+
+         // Селектор по класу .class1
+         let myClass1 = document.querySelector('.class1');
+
+        // Селектор по класу .class
+        let myClass = document.querySelector('.class');
+
+        // Додаємо клас 'newclass' до існуючого класу, який має стилі
+        myClass.classList.add('newclass');
+
+        // Виводимо всі стилі, які є у елемента з класом "newclass"
+        let ComputedStyle = getComputedStyle(myClass);
+        console.log(ComputedStyle);
+
+        // Селектор із ідентифікатором "id1"
+        let myId = document.getElementById('id1');
+
+        // Додаємо стилі до елемента з id "id1"
+        myId.style.marginTop = '10px';
+        myId.style.background = 'red';
+    </script>
+</body>
+</html>

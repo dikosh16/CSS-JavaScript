@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <div id="one">one</div>
+
+    <script>
+    // Добавьте после дива с id=one еще один див с текстом two и id=two
+    // На клик по id=two добавьте перед ним див с id - two_first, а див с id=two измените на two_second 
+
+    // Додаємо ще один див з текстом two та id=two
+    var newDiv = document.createElement("div");
+    newDiv.innerHTML = "two";
+    newDiv.id = "two";
+    document.body.appendChild(newDiv);
+
+    // Функція обробки кліка по елементу з id=two
+    function handleTwoClick() {
+    // Створюємо новий див з id=two_first
+    var newDivFirst = document.createElement("div");
+    newDivFirst.id = "two_first";
+    newDivFirst.innerHTML = "two_first";
+
+    // Змінюємо існуючий див з id=two на two_second
+    var existingDiv = document.getElementById("two");
+    existingDiv.id = "two_second";
+    existingDiv.innerHTML = "two_second";
+
+    // Вставляємо новий див перед існуючим дивом
+    existingDiv.parentNode.insertBefore(newDivFirst, existingDiv);
+    }
+
+    // Призначаємо обробник кліка для елемента з id=two
+    var elementTwo = document.getElementById("two");
+    elementTwo.addEventListener("click", handleTwoClick);
+    </script>
+</body>
+</html>

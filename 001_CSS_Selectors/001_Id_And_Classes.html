@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Id and classes</title>
+    <style>
+        #id1 {
+            color: red;
+        }
+        div.class1 {
+            color: blue;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="id1">Title</h1>
+    <div class="class1" >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla consequuntur, obcaecati recusandae enim laboriosam eaque, sint incidunt. Perferendis mollitia incidunt blanditiis eveniet, fuga sapiente. Magni dicta maxime fugiat sint soluta?        
+    </div>
+    <script>
+        // Перепишемо селектори з першої папки 001_CSS_Selectors
+
+        // Селектор по тегу <div>
+        let blocks = document.getElementsByTagName('div');
+
+        // Селектор по класу .class1
+        let myClass1 = document.querySelector('.class1');
+
+        // Додаємо клас 'newclass' до існуючого класу, який має стилі
+        myClass1.classList.add('newclass');
+
+        // Виводимо всі стилі, які є у елемента з класом "newclass"
+        let ComputedStyle = getComputedStyle(myClass1);
+        console.log(ComputedStyle);
+
+        // Селектор із ідентифікатором "id1"
+        let myId = document.getElementById('id1');
+
+        // Додаємо стилі до елемента з id "id1"
+        myId.style.marginTop = '10px';
+        myId.style.background = 'red';
+    </script>  
+</body>
+</html>
